@@ -116,6 +116,36 @@ export default defineConfig({
                     },
                 ],
             },
+            {
+                label: 'Pages',
+                name: 'page',
+                path: 'content',
+                format: 'md',
+                templates: [
+                    {
+                        label: 'About Page',
+                        name: 'about',
+                        match: 'about',
+                        fields: [
+                            {
+                                type: 'string',
+                                label: 'Title',
+                                name: 'title',
+                            },
+                            {
+                                type: 'image',
+                                label: 'Image',
+                                name: 'image',
+                            },
+                            {
+                                type: 'rich-text',
+                                label: 'Content',
+                                name: 'content',
+                            },
+                        ],
+                    },
+                ],
+            },
         ],
     },
 });

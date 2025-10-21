@@ -9,15 +9,10 @@ theme = 'ananke'
 [menu]
   [[menu.main]]
     name = "DTF"
-    url = "/posts/"
+    url = "/"
     weight = 1
 
   [[menu.main]]
     name = "О компании"
     url = "/about/"
     weight = 2
-
-  [[menu.main]]
-    name = "Посты"
-    url = "/posts/"
-    weight = 3

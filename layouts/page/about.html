@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="pa3 pa4-ns">
+    <article class="center measure-wide lh-copy mid-gray">
+        {{ if .Params.image }}
+        <img src="{{ .Params.image | relURL }}" alt="О компании" class="db w-100 mb4">
+        {{ end }}
+
+        <div class="nested-copy-line-height">
+            {{ .Params.content | safeHTML }}
+        </div>
+    </article>
+</div>
+{{ end }}
