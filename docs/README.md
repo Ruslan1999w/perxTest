@@ -119,6 +119,10 @@ hugo
 - Используйте `--disableFastRender` при локальной разработке, если видите устаревший контент
 
 
+## Этот сайт построен с использованием:
+- [Hugo](https://gohugo.io/) — статический генератор сайтов
+- [Ananke](https://github.com/theNewDynamic/gohugo-theme-ananke) — тема оформления
+- [Tina CMS](https://tina.io/) — система редактирования контента
 
 
 
