@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="mw8 center ph3 pv4">
+    {{ range where .Site.Pages "Section" "posts" }}
+    <article>
+        {{ partial "article-card.html" . }}
+    </article>
+    {{ end }}
+</div>
+{{ end }}

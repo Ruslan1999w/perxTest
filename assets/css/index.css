@@ -1,0 +1,23 @@
+/* Полный контроль над body и html */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #232323;
+    color: #ffffff;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Убедимся, что контент не выходит за границы */
+.container,
+.mw8 {
+    width: 100%;
+    max-width: 64rem; /* mw8 из Tachyons */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Дополнительно: если хочешь фон для main (на случай градиента или теней) */
+main {
+    background-color: #232323;
+}

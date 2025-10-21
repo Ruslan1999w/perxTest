@@ -1,0 +1,23 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'ananke'
+
+[params]
+  customCSS = ["css/custom.css"]
+
+[menu]
+  [[menu.main]]
+    name = "DTF"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    name = "О компании"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Посты"
+    url = "/posts/"
+    weight = 3

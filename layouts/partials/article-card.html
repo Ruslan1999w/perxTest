@@ -1,0 +1,72 @@
+<div
+        class="br3 shadow-1 pa3 mb4 hover-shadow-5 transition-all white w-100"
+        style="background-color: #232323"
+>
+        <!-- Автор -->
+    <div class="flex items-center mb3">
+        {{ with .Params.author_image }}
+        <img
+                src="{{ . | relURL }}"
+                alt="{{ $.Params.author_name | default "Автор" }}"
+        class="w3 h3 br-100 mr3"
+        loading="lazy"
+        />
+        {{ else }}
+        <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Автор"
+                class="w3 h3 br-100 mr3"
+                loading="lazy"
+        />
+        {{ end }}
+        <div>
+            <div class="f6 fw6">{{ .Params.author_name | default "Имя Автора" }}</div>
+            <div class="f7">{{ .Date | time.Format "2 января 2006" }}</div>
+        </div>
+    </div>
+
+    <!-- Медиа-блок -->
+    {{ with .Params.media_poster }}
+    <div class="block-media mb3">
+        {{ if (hasSuffix . ".mp4") }}
+        <video class="w-100 br3" controls preload="metadata" poster="{{ $.Params.media_poster }}">
+            <source src="{{ . | relURL }}" type="video/mp4" />
+            Ваш браузер не поддерживает видео.
+        </video>
+        {{ else }}
+        <img src="{{ . | relURL }}"
+             alt="Медиа"
+             class="w-100 br3"
+             loading="lazy"
+        />
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Заголовок -->
+    <h2 class="f4 fw7 mb2 hover-blue pointer truncate">
+        <a href="{{ .RelPermalink }}" class="no-underline white">
+            {{ .Title }}
+        </a>
+    </h2>
+
+    <!-- Описание -->
+    <p class="f5 mb3 line-clamp-3">
+        {{ .Description | default (.Summary | plainify | truncate 120) }}
+    </p>
+
+    <!-- Теги и комментарии -->
+    <div class="flex items-center f6 gray">
+        {{ range .Params.tags }}
+        <span class="mr2">#{{ . }}</span>
+        {{ end }}
+        {{ if and .Params.tags .Params.comments }}
+        <span>-</span>
+        {{ end }}
+        {{ with .Params.comments }}
+        <span class="ml2">{{ . }} комментариев</span>
+        {{ end }}
+    </div>
+</div>
+
+
